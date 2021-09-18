@@ -1,0 +1,199 @@
+<!doctype html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+<meta name="Stephen Hancock" content="XMM-Newton">
+</head>
+
+</body>
+ <html>
+   <title>timing analysis</title>
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.5">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </head>
+  <style>
+    body {background-color:  #d5d7d8 ;}
+    body {font-family:"Arial";}
+  </style>
+<body>
+<div class="container">
+ <head>
+  <h2> </h2>
+ </head>
+<body>
+
+<div>
+<p style="margin-top: 5px; margin-right: 15px;">
+ <img src="http://www.star.bris.ac.uk/steff/ecm/University-of-Bristol-Logo-1.gif" style="float:left;width:180px;height:55px;">
+</div>
+
+<a>
+  <img src="http://www.star.bris.ac.uk/steff/images/ESA-XMM-Newton_410.jpg" style="padding: 0 15px; float: right;" width="280" height="160">
+  <div style='width: 140px; text-align: center; float: right;'>All data has been sourced from the X-ray observatory <a href="https://www.cosmos.esa.int/web/xmm-newton">XMM Newton</a></div>
+</a>
+  </p>
+</figure>
+
+<br/>
+<br/>
+<br/>
+
+<br>
+ <head>
+  <h2>Timing Analysis: The lag-frequency & lag-energy</h2>
+ </head>
+
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+.button6 {background-color: #d1f2eb;} /* Light green */
+.button7 {background-color: #f7dc6f; color: black;} /* Yellow */
+.button8 {background-color: #95a5a6;} /* Dark Grey*/
+.button9 {background-color: #d4ac0d; color: black;} /* Gold */ 
+.button10 {background-color: #0C0B0B;} /* Black */ 
+</style>
+<body>
+ <a href="http://www.star.bris.ac.uk/steff/hancock.html"><button class="button button10">Home</button>
+ <a href="http://www.star.bris.ac.uk/steff/xmmreverblags.html"><button class="button">Pre-processing</button>
+ <a href="http://www.star.bris.ac.uk/steff/spectral_results.html"><button class="button button2">Spectral Analysis</button>
+ <a href="http://www.star.bris.ac.uk/steff/ecm_results.html"><button class="button button2">ECM Analysis</button>
+ <a href="http://www.star.bris.ac.uk/steff/downloads_page.html"><button class="button button9">Downloads & Code</button><br>
+
+ <a href="http://www.star.bris.ac.uk/steff/timing_analysis.html"><button class="button button4">Timing Logbook</button>
+ <a href="http://www.star.bris.ac.uk/steff/agn_spectral_modelling.html"><button class="button button4">Spectral Logbook</button>
+ <a href="http://www.star.bris.ac.uk/steff/ecm_model.html"><button class="button button4">Building the ECM</button>
+ <a href="http://www.star.bris.ac.uk/steff/alternative_spectra.html"><button class="button button4">Alternative Spectra</button>
+ <a href="https://github.com/phajy/x-ray-reverberation"><button class="button button5">GitHub</button>
+ <a href="http://www.star.bris.ac.uk/steff/linux_notes.html"><button class="button button8">Linux Info</button>
+ <a href="http://www.star.bris.ac.uk/steff/links.html"><button class="button button8">Links</button></a>
+</body>
+
+<!-- 
+<figure>
+  <p style="margin-top: 5px;">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/1H0707-495_fullycomb_lagfreq.png" style="padding: 0 10px; float: left;" width="370" height="290">
+  </p>
+<figure>
+-->
+
+<div id="toc_container">
+<p class="toc_title">Contents</p>
+<ul class="toc_list">
+  <li><a href="#1PH">1 The combined lag-frequency for 1H0707-495 and IRAS13224-3809</a>
+  <li><a href="#2PH">2 The combined lag-frequency for all other AGN</a>
+  <li><a href="#3PH">3 The soft-lag amplitude </a>
+  <li><a href="#4PH">4 The lag-energy</a>
+</ul>
+</div>
+
+<h2 id="1PH">1 The spectra and lag-frequency for 1H0707-495 and IRAS13224-3809</h2>
+<p> These are the main results from the spectral variability and lag-frequency for 1H0707-495 and IRAS13224-3809 analysis contained within the <a href="http://www.star.bris.ac.uk/steff/timing_analysis.html">Timing Logbook</a> link.</p>
+<br/>
+
+<figure>
+  <figcaption><b>Figure 1:</b> The left-hand panels show how the spectral states were selected due to their variability. The right-hand panels show the associated combined (black), high-state (red), medium-state (amber) and low state (green) lag-frequency. These lags have generally been calculated <MATH>>5 x 10<sup>-5</sup></MATH> Hz.
+  <p style="margin-top: 10px;">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/1H0707-495_lo_med_hi-1.png" style="padding: 0 10px; float: centre;" width="500" height="360">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/1H0707-lag-results-lo-hi.png" style="padding: 20px 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/IRAS13224-3809_lo_med_hi-1.png" style="padding: 0 10px; float: centre;" width="500" height="360">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/IRAS13224-lag-results-All-flux.png" style="padding: 20px 10px; float: centre;" width="500" height="400">
+
+
+<h2 id="2PH">2 Overview of the combined lag-frequency for all other AGN</h2>
+<p> These are the main results from the lag-frequency and lag-energy analysis contained within the <a href="http://www.star.bris.ac.uk/steff/timing_analysis.html">Timing Logbook</a> link.</p>
+<br/>
+
+
+<figure>
+  <figcaption><b>Figure 2:</b> The lag-frequency for all 20 AGN in this sample includeing combined lags where (black) high-flux (red) and low-flux(green). Note some AGN also contain a medium flux lag group (amber). These lags have generally been calculated <MATH>>5 x 10<sup>-5</sup></MATH> Hz.
+  <p style="margin-top: 10px;">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/Ark564-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/MCG-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/Mrk335-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/Mrk766-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/Mrk841-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/NGC1365-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/NGC3516-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/NGC4051-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/NGC4151-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/NGC4395-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/NGC5548-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/NGC6860-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/NGC7314-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/NGC7469-lag-results-lo-hi-03-5keV.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/PG1211+143-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/PG1244+026-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/PG1247+267-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/REJ1034+396-lag-results-lo-hi-flux.png" style="padding: 0 10px; float: centre;" width="500" height="400">
+</p>
+</figure>
+
+<h2 id="3PH">3 The soft-lag amplitude and black hole Mass scaling relation</h2>
+<!-- 
+<figure>
+  <figcaption><b>Figure 2:</b> <b>Left:</b> The fully combined lag-frequency for all AGN. <b>Right:</b> The composite lag-frequency for the combined (black), hi-flux (red) and low flux (green) spectral states.</h3>
+  <p style="margin-top: 10px;">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/ALL-AGN-lag-V-LogM-combined-Z.png" style="padding: 0 10px; float: centre;" width="560" height="460">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/ALL-AGN-lag-V-LogM-hi-lo-Z.png" style="padding: 0 10px; float: centre;" width="560" height="460">
+</p>
+</figure>
+-->
+
+<figure>
+  <figcaption><b>Figure 2:</b> <b>Left:</b> The fully combined time lags for all AGN. <b>Right:</b> The frequency at which the lags occur.</h3>
+  <p style="margin-top: 10px;">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/Mass_lag_log_polyfit_ALL.png" style="padding: 0 10px; float: centre;" width="560" height="460">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/Mass_lag_freq_log_polyfit_ALL.png" style="padding: 0 10px; float: centre;" width="560" height="460">
+</p>
+</figure>
+
+<!-- 
+<h2 id="4PH">4 The soft-lag-frequency and black hole Mass inverse-scaling relation </h2>
+<figure>
+  <figcaption><b>Figure 3:</b> <b>Left:</b> The fully combined lag-frequency for all AGN. <b>Right:</b> The composite lag-frequency for the combined (black), hi-flux
+(red) and low flux (green) spectral states.</h3>
+  <p style="margin-top: 10px;">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/ALL-AGN-Frequency-V-LogM-combined.png" style="padding: 0 10px; float: centre;" width="560" height="460">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/ALL-AGN-Frequency-V-LogM-composite.png" style="padding: 0 10px; float: centre;" width="560" height="460">
+</p>
+</figure>
+-->
+
+<h2 id="5PH">4 The lag-energy</h2>
+<figure>
+  <figcaption><b>Figure 4:</b> The lag-energy has been taken at the low-frequency (black) and high-frequency (red) ranges as stated in each AGN graph. These have been calculated where AGN show variability in both low-frequency disc fluctuation lags and the high-frequency reverberation lags.
+  <p style="margin-top: 10px;">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/1H0707-495-lagen-results.png" style="padding: 0 10px; float: centre;" width="560" height="460">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/IRAS13224-3809-lagen-results.png" style="padding: 0 10px; float: centre;" width="560" height="460">
+</p>
+</figure>
+
+
+
+<hr>
+<div class="footnote">
+<p>Created by: Stephen Hancock, University of Bristol, HH Wills Physics Lab</p>
+<p>email: steff.hancock@bristol.ac.uk</p>
+</div>
+</hr>
+<br>
+</html>
