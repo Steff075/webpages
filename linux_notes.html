@@ -1,0 +1,2221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Linux quick reference</title>
+<!-- 2020-02-08 Sat 15:25 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Stephen Hancock" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Linux quick reference</h1>
+<left> <meta name="viewport" content="width=device-width,
+initial-scale=1.08"> <link rel="stylesheet"
+href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script
+src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<div class="container"> <style> body {background-color: #E0E0E0;} body
+{font-family:"Arial";} </style> <div class="container">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. BlueCrystal</a>
+<ul>
+<li><a href="#sec-1-1">1.1. Change compilers</a></li>
+<li><a href="#sec-1-2">1.2. Compiling to assess performance</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. Files &amp; Directories</a></li>
+<li><a href="#sec-3">3. Viewing Files</a></li>
+<li><a href="#sec-4">4. Filename conventions</a></li>
+<li><a href="#sec-5">5. Running Scripts</a></li>
+<li><a href="#sec-6">6. SSH</a></li>
+<li><a href="#sec-7">7. Copying files across machines</a></li>
+<li><a href="#sec-8">8. Change permissions</a></li>
+<li><a href="#sec-9">9. Processes &amp; Jobs</a></li>
+<li><a href="#sec-10">10. Running intensive computational tasks</a></li>
+<li><a href="#sec-11">11. Redirection</a></li>
+<li><a href="#sec-12">12. Useful Commands</a></li>
+<li><a href="#sec-13">13. Wildcards</a></li>
+<li><a href="#sec-14">14. Installing software</a></li>
+<li><a href="#sec-15">15. Other Information</a></li>
+<li><a href="#sec-16">16. Postscript files</a></li>
+<li><a href="#sec-17">17. Convert to pdf or png</a></li>
+<li><a href="#sec-18">18. Kill historic tasks</a></li>
+<li><a href="#sec-19">19. Backup</a></li>
+<li><a href="#sec-20">20. Backup external drive</a></li>
+<li><a href="#sec-21">21. Links</a></li>
+<li><a href="#sec-22">22. Screen</a></li>
+<li><a href="#sec-23">23. Sphinx</a></li>
+<li><a href="#sec-24">24. EMACS</a></li>
+<li><a href="#sec-25">25. isis general</a></li>
+<li><a href="#sec-26">26. isis scripting</a></li>
+<li><a href="#sec-27">27. PGPLOT</a></li>
+<li><a href="#sec-28">28. Black hole visualisation code</a></li>
+<li><a href="#sec-29">29. Good Astro related links</a>
+<ul>
+<li><a href="#sec-29-1">29.1. Astro General</a></li>
+<li><a href="#sec-29-2">29.2. BlueCrystal</a></li>
+<li><a href="#sec-29-3">29.3. C programming</a></li>
+<li><a href="#sec-29-4">29.4. Data Visualisation</a></li>
+<li><a href="#sec-29-5">29.5. EMACS</a></li>
+<li><a href="#sec-29-6">29.6. Github</a></li>
+<li><a href="#sec-29-7">29.7. Graph Plotter</a></li>
+<li><a href="#sec-29-8">29.8. Machine Learning</a></li>
+<li><a href="#sec-29-9">29.9. Python</a></li>
+<li><a href="#sec-29-10">29.10. Pandas</a></li>
+<li><a href="#sec-29-11">29.11. S-Language</a></li>
+<li><a href="#sec-29-12">29.12. ISIS &amp; Spectral</a></li>
+<li><a href="#sec-29-13">29.13. SQL</a></li>
+<li><a href="#sec-29-14">29.14. Unix</a></li>
+<li><a href="#sec-29-15">29.15. Viva Prep</a></li>
+<li><a href="#sec-29-16">29.16. XMM Newton</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> BlueCrystal</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Open BlueCrystal in  a terminal: ssh username@bluecrystalp3.bris.ac.uk -XY
+</p>
+
+<p>
+Copy files scp 'filename' username@bluecrystalp3.bris.ac.uk:~
+</p>
+
+<p>
+or to a specific directory: scp -r 'filename'
+username@bluecrystalp3:1H0707-495/
+</p>
+
+<p>
+PATHWAY  <code>/panfs/panasas01/phys/username/hpc_course</code>
+</p>
+
+<p>
+<b>Modules</b>
+</p>
+
+<p>
+To view modules
+</p>
+
+<pre class="example">
+[so14935@newblue1 lab1]$ module list
+Currently Loaded Modulefiles:
+  1) shared                           3) torque/4.2.4.1                   5) default-environment              7) apps/isis-1.6.2-35
+  2) dot                              4) moab/7.2.9                       6) languages/gcc-5.3                8) languages/intel-compiler-16-u2
+</pre>
+
+<p>
+Add a module, eg:
+</p>
+
+<pre class="example">
+module add languages/intel-compiler-16-u2
+
+if you do this, then delete other compilers as this may cause confusion:
+
+module del languages/gcc-5.3
+</pre>
+
+<p>
+<b>Example</b>
+</p>
+
+<p>
+Create a simple script <code>lab1.c</code>
+</p>
+
+<pre class="example">
+#include &lt;stdio.h&gt;
+
+int main(int argc, char *argv[])
+{
+	printf("Hello, World!\n");
+  return 0;
+}
+</pre>
+
+<p>
+Compile the script using gcc
+</p>
+
+<pre class="example">
+gcc -Wall -o lab1 lab1.c
+</pre>
+
+<p>
+Create the job <code>lab1.job</code>
+</p>
+
+<pre class="example">
+#!/bin/bash
+
+#PBS -N lab1
+#PBS -o lab1.out
+#PBS -joe
+#PBS -m a
+#PBS -q teaching
+#PBS -l nodes=1:ppn=16
+#PBS -l walltime=00:01:00
+
+cd $PBS_O_WORKDIR
+
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo PBS job ID is $PBS_JOBID
+
+./lab1
+</pre>
+
+<p>
+Now run the job on Bluecrytal:
+</p>
+
+<pre class="example">
+qsub jab1.job
+</pre>
+
+
+<p>
+The output <code>la1.out</code>
+</p>
+
+<pre class="example">
+Running on host node31-029
+Time is Sat Oct 7 14:54:28 BST 2017
+Directory is /panfs/panasas01/phys/so14935/lab1
+PBS job ID is 6195690.master.cm.cluster
+Hello, World!
+</pre>
+
+
+<p>
+You can change the gcc compiler for an icc compiler:
+</p>
+
+<pre class="example">
+icc -Wall -o lab1 lab1.c
+</pre>
+
+
+
+<p>
+<b>Runnung Scripts</b>
+</p>
+
+<p>
+create a script, i.e. <code>jacobi.c</code>
+</p>
+
+<p>
+Using a <b>Makefile</b> compile the script to make executable
+</p>
+
+<pre class="example">
+CC = cc
+CFLAGS = -std=c99 -Wall
+LDFLAGS = -lm
+
+jacobi: jacobi.c
+	$(CC) $(CFLAGS) -o jacobi jacobi.c $(LDFLAGS)
+</pre>
+
+<p>
+enter <code>make</code>
+</p>
+
+<p>
+compile the job submission script <code>jacobi.job</code>
+</p>
+
+<pre class="example">
+!/bin/bash
+
+#PBS -N jacobi
+#PBS -o jacobi.out
+#PBS -joe
+#PBS -m a
+#PBS -q teaching
+#PBS -l nodes=1:ppn=16
+#PBS -l walltime=00:302:00
+
+cd $PBS_O_WORKDIR
+
+echo Running on host `hostname`
+echo Time is `date`
+echo Directory is `pwd`
+echo PBS job ID is $PBS_JOBID
+
+./jacobi --norder 1000 --iterations 20000
+</pre>
+
+<p>
+Submit the job
+</p>
+
+<pre class="example">
+qsub jacobi.job
+</pre>
+
+<p>
+View the output <code>jacobi.out</code>
+</p>
+
+<pre class="example">
+Running on host node31-030
+Time is Sat Oct 7 15:03:33 BST 2017
+Directory is /panfs/panasas01/phys/so14935/hpc_course
+PBS job ID is 6195702.master.cm.cluster
+------------------------------------
+Matrix size:            1000x1000
+Maximum iterations:     20000
+Convergence threshold:  0.000100
+------------------------------------
+Solution error = 0.050047
+Iterations     = 2957
+Total runtime  = 10.898879 seconds
+Solver runtime = 10.882403 seconds
+------------------------------------
+</pre>
+
+
+<p>
+<b>View running jobs</b>
+</p>
+
+<pre class="example">
+qstat -u so14935
+</pre>
+</div>
+
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Change compilers</h3>
+<div class="outline-text-3" id="text-1-1">
+<pre class="example">
+module add languages/intel-compiler-16-u2
+
+modele del languages/gcc-5.3
+</pre>
+
+<p>
+Then <code>make</code> again to complie and run. The output <code>jacobi.out</code>:
+</p>
+
+<pre class="example">
+Running on host node31-029
+Time is Sat Oct 7 16:03:24 BST 2017
+Directory is /panfs/panasas01/phys/so14935/hpc_course
+PBS job ID is 6195759.master.cm.cluster
+------------------------------------
+Matrix size:            1000x1000
+Maximum iterations:     20000
+Convergence threshold:  0.000100
+------------------------------------
+Solution error = 0.050047
+Iterations     = 2957
+Total runtime  = 10.897079 seconds
+Solver runtime = 10.880532 seconds
+------------------------------------
+</pre>
+
+<p>
+Using a different compiler made this run only slightly slower
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Compiling to assess performance</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+First, delete any other build as this may confilct twith this process,
+i.e. rm jacobi
+</p>
+
+
+<p>
+edit Makefile  to run -pg
+</p>
+
+<pre class="example">
+CC = cc
+CFLAGS = -std=c99 -Wall -pg
+LDFLAGS = -lm
+
+jacobi: jacobi.c
+        $(CC) $(CFLAGS) -o jacobi jacobi.c $(LDFLAGS)
+</pre>
+
+<p>
+Enter <code>make</code> then run <code>jacobi.job</code>
+</p>
+
+<p>
+<i>OUTPUTS</i> <code>jacobi</code> and <code>gmon.out</code>
+</p>
+
+<p>
+Then initiate gproc to obtain info:
+</p>
+
+<pre class="example">
+gprof jacobi gmon.out | less
+
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls  Ks/call  Ks/call  name
+100.23   1122.43  1122.43        1     1.12     1.12  run
+  0.03   1122.71     0.28                             main
+  0.00   1122.71     0.00        4     0.00     0.00  get_timestamp
+  0.00   1122.71     0.00        2     0.00     0.00  parse_int
+  0.00   1122.71     0.00        1     0.00     0.00  parse_arguments
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+           else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+           function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+           the function in the gprof listing. If the index is
+           in parenthesis it shows where it would appear in
+           the gprof listing if it were to be printed.
+^L
+                     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.00% of 1122.71 seconds
+
+index % time    self  children    called     name
+                                                 &lt;spontaneous&gt;
+[1]    100.0    0.28 1122.43                 main [1]
+             1122.43    0.00       1/1           run [2]
+                0.00    0.00       4/4           get_timestamp [3]
+                0.00    0.00       1/1           parse_arguments [5]
+-----------------------------------------------
+             1122.43    0.00       1/1           main [1]
+[2]    100.0 1122.43    0.00       1         run [2]
+-----------------------------------------------
+                0.00    0.00       4/4           main [1]
+[3]      0.0    0.00    0.00       4         get_timestamp [3]
+-----------------------------------------------
+                0.00    0.00       2/2           parse_arguments [5]
+[4]      0.0    0.00    0.00       2         parse_int [4]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[5]      0.0    0.00    0.00       1         parse_arguments [5]
+                0.00    0.00       2/2           parse_int [4]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index      A unique number given to each element of the table.
+                Index numbers are sorted numerically.
+                The index number is printed next to every function name so
+                it is easier to look up where the function in the table.
+
+     % time     This is the percentage of the `total' time that was spent
+                in this function and its children.  Note that due to
+                different viewpoints, functions excluded by options, etc,
+                these numbers will NOT add up to 100%.
+
+     self       This is the total amount of time spent in this function.
+
+     children   This is the total amount of time propagated into this
+                function by its children.
+
+     called     This is the number of times the function was called.
+                If the function called itself recursively, the number
+                only includes non-recursive calls, and is followed by
+                a `+' and the number of recursive calls.
+
+     name       The name of the current function.  The index number is
+                printed after it.  If the function is a member of a
+                cycle, the cycle number is printed between the
+                function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self       This is the amount of time that was propagated directly
+                from the function into this parent.
+
+     children   This is the amount of time that was propagated from
+                the function's children into this parent.
+
+     called     This is the number of times this parent called the
+                function `/' the total number of times the function
+                was called.  Recursive calls to the function are not
+                included in the number after the `/'.
+
+     name       This is the name of the parent.  The parent's index
+                number is printed after it.  If the parent is a
+                member of a cycle, the cycle number is printed between
+                the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `&lt;spontaneous&gt;' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self       This is the amount of time that was propagated directly
+                from the child into the function.
+
+     children   This is the amount of time that was propagated from the
+                child's children to the function.
+
+     called     This is the number of times the function called
+                this child `/' the total number of times the child
+                was called.  Recursive calls by the child are not
+                listed in the number after the `/'.
+
+     name       This is the name of the child.  The child's index
+                number is printed after it.  If the child is a
+                member of a cycle, the cycle number is printed
+                between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+^L
+Index by function name
+
+   [3] get_timestamp           [5] parse_arguments         [2] run
+   [1] main                    [4] parse_int
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Files &amp; Directories</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+source ~/.cshrc      to read in your cshrc file
+</p>
+
+<p>
+du -sh /homeb/steff075 to see how much memory you are using in a
+particular directory
+</p>
+
+<p>
+du -ch /data/scratch5/steff | grep total - Check dir total mem
+</p>
+
+<p>
+ls         list files
+</p>
+
+<p>
+ls -a         lists hidden files
+</p>
+
+<p>
+ls -al         lists all files
+</p>
+
+<p>
+directory = folder
+</p>
+
+<p>
+cd         change directory e.g. cd /homeb/steff075/Documents/Mrk335
+</p>
+
+<p>
+cd takes you to your home directory
+</p>
+
+<p>
+use tab key to complete file names
+</p>
+
+<p>
+use undrscore instead of spaces
+</p>
+
+<p>
+pwd         tells full path of where you are (always begins with'/')
+</p>
+
+<p>
+. current directory
+</p>
+
+<p>
+.. parent directory
+</p>
+
+<p>
+cp                 copy files
+</p>
+
+<p>
+rename mv         e.g mv testfile1 testfile5
+</p>
+
+<p>
+cut/paste        select by left click then hit mid button on mouse
+</p>
+
+<p>
+rm        delete files - use with care!!!
+</p>
+
+<p>
+alias rm 'rm -i'
+</p>
+
+<p>
+echo $SHELL  tells you which shell you are in
+</p>
+
+<p>
+mkdir Junk         makes a directory
+</p>
+
+<p>
+rmdir                 deletes it
+</p>
+
+<p>
+\rm -r dirname  deletes an entire directory
+</p>
+
+<p>
+tar -zcvf {.tgz-file} {files} to zip files
+</p>
+
+<p>
+zip ALL-FILES * To zip all files in a directory where name = 'ALL-FILES'
+</p>
+
+<p>
+du -a | cut -d/ -f2 | sort | uniq -c | sort -nr    This prints the
+file count per directory for the current directory level
+</p>
+
+<p>
+du -h .  check memory of directory
+</p>
+
+<p>
+du -h -s . directory summary
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Viewing Files</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+gedit .cshrc
+</p>
+
+<p>
+ls or ls -l  lists all documents
+</p>
+
+<p>
+cat         view files e.g cat tesfile1
+</p>
+
+<p>
+more         another view
+</p>
+
+<p>
+gedit         testfile3 - creates word file 'Testfile3'
+</p>
+
+<p>
+use spacebar to move down a full screen
+</p>
+
+<p>
+q        exit file
+</p>
+
+<p>
+grep         search contents e.g grep z testfile 3 (finds all z in files)
+</p>
+
+<p>
+xdg-open filename  open images (png etc)
+</p>
+
+<p>
+tail -f 1H0707<sub>fit</sub><sub>tmax400</sub>.par
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Filename conventions</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+.txt         text files
+</p>
+
+<p>
+.py        python file
+</p>
+
+<p>
+Help
+</p>
+
+<p>
+man ls          gives list options
+</p>
+
+<p>
+man -k square        gives list of all 'square'
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Running Scripts</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+sas tools       ./steffscript
+</p>
+
+<p>
+isis            .source("script name");
+</p>
+
+<p>
+python          import steffscript
+</p>
+
+<p>
+If you obtain an error such as:
+</p>
+<pre class="example">
+Traceback: _source
+/data/scratch3/ayoung/software/x86_64-unknown-linux-gnu-libc2.12/isis/1.6.2/share/cmds.sl:39:source:Undefined Name
+  Local variables for source:
+	Integer_Type append_semicolon = 0
+&lt;stdin&gt;:1:&lt;top-level&gt;:Undefined Name
+</pre>
+
+<p>
+This means that the script will not work as it is written (see other
+info)
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> SSH</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+To lyra in mac terminal:
+</p>
+
+<p>
+ssh steff075@lyra.star.bris.ac.uk -XY
+</p>
+
+<p>
+To Lyra whilst on another machine at Bristol
+</p>
+
+<p>
+ssh steff075@lyra -XY
+</p>
+
+<p>
+ssh so14935@bluecrystalp3.bris.ac.uk -XY
+</p>
+
+<p>
+SSH files to another computer:
+</p>
+
+<p>
+Log in to MAC terminal
+</p>
+
+<p>
+Note Lyra is 137.222.58.204
+</p>
+
+<p>
+scp -r (drag &amp; drop image from desktop)
+steff075@137.222.58.204:/homeb/steff075/Public
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Copying files across machines</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+To copy files from your mac to linux
+</p>
+
+<pre class="example">
+scp -r (drag &amp; drop  file from desktop) steff075@137.222.58.204:/homeb/steff075/Public
+</pre>
+
+<p>
+Copy to BC4
+</p>
+
+<pre class="example">
+scp file.txt username@bc4login.acrc.bris.ac.uk:~
+
+or for a directory
+
+scp -r file.txt username@bc4login.acrc.bris.ac.uk:~
+</pre>
+
+<p>
+Pulling from another machine (e.g. Bluecrystal)
+</p>
+
+<pre class="example">
+scp username@bc4login.acrc.bristol.ac.uk:/mnt/storage/home/so14935/x-ray-rev2/x-ray-reverberation/file.txt .
+</pre>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Change permissions</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+chmod
+</p>
+
+<p>
+chmod +x filename will make it executable
+</p>
+
+<p>
+chmod +x /homeb/steff075/Cprogram/MyPrograms/*.c will make all .c files in that directory exectutable
+</p>
+
+<p>
+cat ~rd14185/linuxcourse/secretfile
+</p>
+
+<p>
+g+r gives permission to group
+</p>
+
+<p>
+g-r denies permission
+</p>
+
+<p>
+r in 5th column means supervisor can see these
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Processes &amp; Jobs</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+top                 monitor all process (task manager)
+</p>
+
+<p>
+kill                 e.g. kill
+</p>
+
+<p>
+control z         suspends program
+</p>
+
+<p>
+Control fg                recover
+</p>
+
+<p>
+Control z then bg          work in background
+</p>
+
+<p>
+firefox&amp;        Brings it back
+</p>
+
+<p>
+bg  to run in background
+</p>
+
+<p>
+ps -adef &lt;to view tasks&gt;
+</p>
+
+<p>
+jobs &lt;find out whats running&gt;
+</p>
+
+<p>
+ps -adef | grep -i office       &lt;to view libreoffice files that need to
+be killed - if jobs appear, kill them then initiate office again by
+the command soffice and recover anything that needs recovering&gt;
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> Running intensive computational tasks</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+Email from Rhys dated 6 Dec 2018:
+</p>
+
+<p>
+If you are doing intensive computational work on mensa or trappist, it is very much more efficient if your data is on a local disk. For trappist this is <i>data/trappist1</i> and for mensa this is /data/scratch3 or /data/scratch4
+</p>
+
+<p>
+Using /homeb for intensive reading and writing is inefficient and slow.
+</p>
+
+<p>
+If you are not sure which computer has which disk mounted, then cd to that disk and type
+df -h .
+</p>
+
+<p>
+or ssh to the machine you want to use and df -h will show local disks first.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Redirection</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+ls -l &gt; listfile1         rediects into another file
+</p>
+
+<p>
+History          view what you did
+</p>
+
+<p>
+&gt;         send output into file
+</p>
+
+<p>
+&gt;&gt;        appends to a file (e.g ls -l &gt;&gt; listfile1)
+</p>
+
+<p>
+Filter out one z within a file (use the pipe) e.g cat testfile3| grep z
+</p>
+
+<p>
+wc testfile3         provides a character/wordcount
+</p>
+
+<p>
+<b>|</b>   can be used to link commands
+</p>
+
+<p>
+select a line called z and wordcount         cat testfile3 | grep z|wc -l
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Useful Commands</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+quota                disks and  spaces
+</p>
+
+<p>
+df -h                shows disk space
+</p>
+
+<p>
+du -h                disk useage
+</p>
+
+<p>
+du -h -s .         shows current directory
+</p>
+
+<p>
+rsync                syncs changed files
+</p>
+
+<p>
+Cntrl e         moves cursor to end of text line
+</p>
+
+<p>
+history         shows all recent commands
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Wildcards</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+'*'          lists all files
+</p>
+
+<p>
+ls t*        lists files beginning with t
+</p>
+
+<p>
+ls *2        lists files end with 2
+</p>
+
+<p>
+ls testfile?         any character but only 1
+</p>
+
+<p>
+ls testfile [1-3]        Finds a range of files with 1-3
+</p>
+
+<p>
+ls testfile [a-l]*        Finds a range of files names a to l
+</p>
+</div>
+</div>
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Installing software</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+wget <a href="http://ftp.gnu.org/gnu/units/units-2.14.tar.gz">http://ftp.gnu.org/gnu/units/units-2.14.tar.gz</a> &lt;downloads this
+file&gt;
+</p>
+
+<p>
+file * &lt;view file details&gt;
+</p>
+
+<p>
+tar xzvf &lt;filename&gt;   Unpacking progmrams
+</p>
+
+<p>
+./configure
+</p>
+
+<p>
+make
+</p>
+
+<p>
+&lt;Above commands should build the software ready for use&gt;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Other Information</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+An asterix * after a filename means this is an executable file
+</p>
+
+<p>
+If a file has a ~ after the filename, this is an edited version
+</p>
+
+<p>
+diff filename filename  To see the difference between files
+</p>
+
+
+<p>
+For example:
+</p>
+<pre class="example">
+diff lag_freq_script.sl~ lag_freq_script.sl
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Postscript files</h2>
+<div class="outline-text-2" id="text-16">
+<pre class="example">
+variable pid = open_plot("Ark564_spec.ps/cps");
+%plot_data(d, popt); % &lt; or whatever plotting commands you want
+charsize(1.2); %good font size
+nice_width; %good line ratios
+_pgscf(2); %make font roman
+
+close_plot(pid);
+
+
+View ps file
+
+gs Ark564_spec.ps
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Convert to pdf or png</h2>
+<div class="outline-text-2" id="text-17">
+<pre class="example">
+ps to pdf:
+
+ps2pdf  Ark564_spec.ps  Ark564_spec.pdf
+
+gvfs-open Ark564_spec.pdf
+
+
+pdf to png:
+
+pdftocairo -png best_fit_09.pdf
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Kill historic tasks</h2>
+<div class="outline-text-2" id="text-18">
+<p>
+ps aux | grep isis - to search for tasks still running in isis
+</p>
+
+<p>
+kill 12345    &lt;&#x2013; replace 12345 with the job number.
+</p>
+
+<p>
+If that doesn't work try kill -9 12345 (the -9 means really kill!)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Backup</h2>
+<div class="outline-text-2" id="text-19">
+<p>
+MSC DATA: rsync -uav <code>/data/scratch3/steff/</code> <code>/data/lyra1/Steff/databackup/</code>
+</p>
+
+<p>
+rsync -uav <code>/homeb/steff075/phd_ecm/</code> <code>/data/scratch4/steff/phd_backup/</code>
+</p>
+
+<p>
+rsync -uav <code>/homeb/steff075/x-ray-reverberation/</code> <code>/data/scratch4/steff/phd_backup/</code>
+</p>
+
+<p>
+rsync -uav <code>/homeb/steff075/Logbooks/</code> <code>/data/scratch4/steff/Logbooks/</code>
+</p>
+
+<p>
+rsync -uav <code>/homeb/WWW/steff/ecm</code> <code>/data/scratch4/steff/WWWbackup/</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> Backup external drive</h2>
+<div class="outline-text-2" id="text-20">
+<p>
+PATH  <i>run/media/steff075/Untitled</i>
+</p>
+
+<p>
+rsync -uav
+so14935@bc4login.acrc.bristol.ac.uk:/mnt/storage/scratch/so14935/x-ray-rev2/x-ray-reverberation/
+&lt;file to backup to&gt; e.g <i>run/media/steff075/Untitled</i>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Links</h2>
+<div class="outline-text-2" id="text-21">
+<p>
+ln -s &lt;full path to file&gt; link name
+</p>
+
+<p>
+or
+</p>
+
+<p>
+ln -s &lt;full path to file&gt; . &lt;to make a link in that directory&gt;
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-22" class="outline-2">
+<h2 id="sec-22"><span class="section-number-2">22</span> Screen</h2>
+<div class="outline-text-2" id="text-22">
+<p>
+New session: screen
+</p>
+
+<p>
+Detach: Ctr A Ctrl D
+</p>
+
+<p>
+Look up sessions: screen -ls
+</p>
+
+<p>
+Reattach: screen -r 6294.pts-6.lyra
+</p>
+
+<p>
+Kill screen: screen -X -S 5860.pts-6.lyra quit
+</p>
+
+<p>
+Sreen User manual: <a href="https://www.gnu.org/software/screen/manual/screen.html">https://www.gnu.org/software/screen/manual/screen.html</a>
+</p>
+
+
+<p>
+How to scrtoll up and down in a screen: Ctrl A then ESCAPE
+</p>
+
+<p>
+Hit q or ESCAPE when done
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-23" class="outline-2">
+<h2 id="sec-23"><span class="section-number-2">23</span> Sphinx</h2>
+<div class="outline-text-2" id="text-23">
+<p>
+my source directory is:
+</p>
+
+<pre class="example">
+/homeb/steff075/.local/bin
+</pre>
+
+<p>
+Note the above directory is alised in .cshrc file as sphinx
+</p>
+
+<p>
+My build directory is:
+</p>
+
+<pre class="example">
+/homeb/steff075/sphinx
+</pre>
+
+<p>
+To create html or other file:
+</p>
+
+<pre class="example">
+lyra:/homeb/steff075/sphinx&gt; make
+
+Please use `make target' where target is one of
+  html        to make standalone HTML files
+  dirhtml     to make HTML files named index.html in directories
+  singlehtml  to make a single large HTML file
+  pickle      to make pickle files
+  json        to make JSON files
+  htmlhelp    to make HTML files and an HTML help project
+  qthelp      to make HTML files and a qthelp project
+  devhelp     to make HTML files and a Devhelp project
+  epub        to make an epub
+  latex       to make LaTeX files, you can set PAPER=a4 or PAPER=letter
+  latexpdf    to make LaTeX and PDF files (default pdflatex)
+  latexpdfja  to make LaTeX files and run them through platex/dvipdfmx
+  text        to make text files
+  man         to make manual pages
+  texinfo     to make Texinfo files
+  info        to make Texinfo files and run them through makeinfo
+  gettext     to make PO message catalogs
+  changes     to make an overview of all changed/added/deprecated items
+  xml         to make Docutils-native XML files
+  pseudoxml   to make pseudoxml-XML files for display purposes
+  linkcheck   to check all external links for integrity
+  doctest     to run all doctests embedded in the documentation (if enabled)
+  coverage    to run coverage check of the documentation (if enabled)
+</pre>
+
+<p>
+<a href="http://www.sphinx-doc.org/en/stable/">http://www.sphinx-doc.org/en/stable/</a>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-24" class="outline-2">
+<h2 id="sec-24"><span class="section-number-2">24</span> EMACS</h2>
+<div class="outline-text-2" id="text-24">
+<p>
+cd .emacs.d - for init file and other emacs realated directories
+</p>
+
+<p>
+Alt-shift then left/right arrow to increase/decrease indentation
+</p>
+
+<p>
+Shift &lt; e rtn to get a text box
+</p>
+
+<p>
+Make font larger or smaller C-x C&#x2013; or C- +
+</p>
+
+<p>
+Move down a screen C-v
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-25" class="outline-2">
+<h2 id="sec-25"><span class="section-number-2">25</span> isis general</h2>
+<div class="outline-text-2" id="text-25">
+<pre class="example">
+list_functions; &lt;---list all functions
+
+help("rfxconv"); &lt;---get help on a function
+
+list_par;
+
+data_flux(1,0.3,10);
+
+list_data;
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-26" class="outline-2">
+<h2 id="sec-26"><span class="section-number-2">26</span> isis scripting</h2>
+<div class="outline-text-2" id="text-26">
+<p>
+Multi data + colour data
+</p>
+
+<pre class="example">
+variable exp_time = 100000.0; % &lt;-- desired exposure time
+
+xmm_rmf = load_rmf("pn-med-5-ao16.rmf");
+xmm_arf = load_arf("pn-med-5-ao16.arf");
+assign_rmf(xmm_rmf,1);
+assign_arf(xmm_arf,1);
+
+nustar_rmf = load_rmf("nustar.rmf");
+Remove_Spectrum_Gaps=1;
+nustar_arf = load_arf("point_30arcsecRad_1arcminOA.arf");
+assign_rmf(nustar_rmf,2);
+assign_arf(nustar_arf,2);
+
+require("xspec");
+fit_fun("tbabs*pexmon");
+% the following line sets the absorbing column density
+% the next zero means the parameter is not frozen
+% the next 0,1 are the parameter minimum and maximum allowed values
+set_par("tbabs(1).nH",3.64E-2,0,0,1);
+set_par("pexmon(1).norm",3.36E-4,0,0,1);
+__set_hard_limits("pexmon(1).PhoIndex",0,3); % &lt;--kept getting a message that  "parameter 3 minimum=0 violates hard limits (1.1, 2.5)"
+set_par("pexmon(1).PhoIndex",1.5,0,0,3);
+
+set_data_exposure(1,exp_time);
+set_arf_exposure(1,exp_time);
+
+set_data_exposure(2,exp_time);
+set_arf_exposure(2,exp_time);
+
+fakeit;
+list_data;
+xlog;
+ylog;
+popt.res=1;
+popt.dsym=1;
+rebin_data(1, 20);
+group(2; min_sn=2.0);
+
+xnotice_en(1, 0.5, 10.0);
+xnotice_en(2, 3.0, 50.0);
+ignore_en(1, 0.0, 2.0);% &lt;-- ignores the data point at 1keV
+ignore_en(2, 0.5, 3.0); % &lt;-- ignore low energies, below 3 keV for NuSTAR
+ignore_en(2, 60.0, 100.0); % &lt;-- ignore highest energy data point
+
+() = fit_counts;
+popt.dcol=[3,4];
+popt.dsym=[1,1];
+popt.res=1;
+plot_data({1,2}, popt);
+</pre>
+
+
+<div class="figure">
+<p><img src="http://www.star.bris.ac.uk/steff/2spec_image.png" alt="2spec_image.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-27" class="outline-2">
+<h2 id="sec-27"><span class="section-number-2">27</span> PGPLOT</h2>
+<div class="outline-text-2" id="text-27">
+<pre class="example">
+isis example:
+
+d=load_data("PN_time_0.3-10_pi_grp.fits");
+add_plot_unit("keV","kev^2"; xscale=keV, yscale=keV^2);
+open_plot("1H0707-495_0110890201_specUnfold.gif/gif");
+title ("1H0707-495 0110890201 Unfolded Spectrum");
+plot_unfold(1;power=3, dcol4,decol=4);
+close_plot();
+
+
+latex2pg:
+
+Purpose: Translate strings from LATEXformat to PGPLOT format
+Usage: String Type = latex2pg (String Type)
+See Also: xylabel, xlabel, ylabel, title, label
+This function simplifies creating plot annotations which contain Greek symbols, superscripts
+and subscripts. It translates strings written in a convenient LATEX-style format into a format
+which is understood by PGPLOT. For example:
+
+__LaTeX_format____     __PGPLOT_format____
+1.24 \\x 10^{-14}       1.24 \x 10\u-14\d
+\\A^{-1}                \A\u-1\d
+2s~^2S_{1/2}            2s \u2\dS\d1/2\u
+e^{i\\pi} + 1 = 0       e\ui\gp\d + 1 = 0
+
+Note that two backslash `\' symbols must be used to denote font changes, Greek symbols and
+other special symbols.
+
+   dcol    = (pgplot) color value for data (or list of color values)
+   decol   = (pgplot) color value for data error bars (or list of color values)
+   mcol    = (pgplot) color value for model (or list of color values)
+             0 =&gt; No model plotted
+   rcol    = (pgplot) color value for residuals (or list of color values; arrays
+             within the list allow for individual color values if portions of
+             the data are combined, but their associated residuals are not)
+   recol   = color for residual error bars (or list of color values; arrays
+             within the list act as for residual color inputs)
+   dsym    = (pgplot) symbol value for data (or list of symbol values)
+             0 =&gt; histogram plot
+   rsym    = (pgplot) symbol value for residuals (or list of symbol values;
+             arrays within the list act as for residual color inputs)
+             0 =&gt; histogram plot
+
+
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;Below is taken from
+
+http://space.mit.edu/~mnowak/data/.isisrc_plots
+
+
+variable fp = stderr;
+
+public define pg_info()
+{
+   () = fprintf(fp,  "\n%s\n", %{{{
++" # COLOR   SYMBOL    # COLOR       SYMBOL             # COLOR SYMBOL\n"
++" \n"
++" 1 default dot       9 yllw green  mdot              17 green filled circle\n"
++" 2 red     plus     10 green+cyan  fancy square      18 brown filled star\n"
++" 3 green   cross    11 indigo      diamond           19 pink  big square\n"
++" 4 blue    circle   12 purple      star           20-27 gold  sized circles\n"
++" 5 cyan    cross    13 red+magenta solid triangle 28-31       left/right/\n"
++" 6 magenta square   14 dark grey   hollow cross               up/down arrows\n"
++" 7 yellow  triangle 15 light grey  star of david 32-127       ASCII symbols\n"
++" 8 orange  earth    16 black       filled square\n"
++" \n"
++" Negative symbol #'s give filled symbols with that many sides\n"
++" Colors 17-27 must first be defined with pg_color();\n"
++" \n"
++" pointstyle(#)           : Choose one the above symbols.\n"
++" connect_points(#)       : -1 = line only / 0 = points only / 1 = both \n"
++" linestyle(#)            : (1) full line, (2) dashed, (3) dot-dash, \n"
++"                           (4) dotted, (5) dash-dot-dot-dot\n"
++" \n"
++" line_or_color(#)        : plot(x,y,##), ## = linestyle(##), if # = 0\n"
++"                                         ## = color, if # != 0 (default)\n"
++" \n"
++" set_line_width(#)       : Set the widths of lines in ISIS intrinsic plots\n"
++" set_frame_line_width(#) : Set the frame width\n"
++" charsize(#)             : Set character sizes in plots\n"
++" point_size(#)           : Set datapoint sizes in plots\n"
++" \n"
++" xlabel(), ylabel(), title(); with \\\\u, \\\\d, \\\\g = up, down, greek\n"
++"   \\\\fn, \\\\fr, \\\\fi, \\\\fs = normal, roman, italic, and script fonts\n"
++"   \\\\A = Angstrom, \\\\. = center dot, \\\\x = multiplication,\n"
++"\n"
++"\n"
++" Custom plot functions defined by ISIS fancy plots script (obtain help for\n"
++" individual functions, usually by invoking function without any arguments): \n\n"
++"   Plotting routines  : plot_counts, plot_data, plot_unfold, plot_residuals,\n"
++"                        plot_fit_model, plotxy\n"
++"   Output routines    : open_print, close_print (variant of intrinsics,\n"
++"                        open_plot, close_plot), write_plot (write to ASCII)\n"
++"   Unit set routines  : fancy_plot_unit, add_plot_unit\n"
++"   Color set routine  : pg_color\n"
++"   Labelling routines : set_plot_labels, new_plot_labels\n"
++"   Width/size routines: set_plot_widths, nice_width, sov,\n"
++"                        apj_size, keynote_size\n"); %}}}
+}
+
+
+Default Color Representation
+
+Color
+Index    Color                  (H, L, S)        (R, G, B)
+
+ 0   Black (background)       0, 0.00, 0.00   0.00, 0.00, 0.00
+ 1   White (default)          0, 1.00, 0.00   1.00, 1.00, 1.00
+ 2   Red                    120, 0.50, 1.00   1.00, 0.00, 0.00
+ 3   Green                  240, 0.50, 1.00   0.00, 1.00, 0.00
+ 4   Blue                     0, 0.50, 1.00   0.00, 0.00, 1.00
+ 5   Cyan (Green + Blue)    300, 0.50, 1.00   0.00, 1.00, 1.00
+ 6   Magenta (Red + Blue)    60, 0.50, 1.00   1.00, 0.00, 1.00
+ 7   Yellow  (Red + Green)  180, 0.50, 1.00   1.00, 1.00, 0.00
+ 8   Red + Yellow (Orange)  150, 0.50, 1.00   1.00, 0.50, 0.00
+ 9   Green + Yellow         210, 0.50, 1.00   0.50, 1.00, 0.00
+10   Green + Cyan           270, 0.50, 1.00   0.00, 1.00, 0.50
+11   Blue + Cyan            330, 0.50, 1.00   0.00, 0.50, 1.00
+12   Blue + Magenta          30, 0.50, 1.00   0.50, 0.00, 1.00
+13   Red + Magenta           90, 0.50, 1.00   1.00, 0.00, 0.50
+14   Dark Gray                0, 0.33, 0.00   0.33, 0.33, 0.33
+15   Light Gray               0, 0.66, 0.00   0.66, 0.66, 0.66
+16--255	Undefined
+
+Line Style
+Line Style can be, e.g., solid, dashed, or dotted. The attribute affects only lines, not the other primitives. It is controlled by subroutine PGSLS. The default line style is a full, unbroken line. Line style is described by an integer code:
+
+    1: full line,
+    2: long dashes,
+    3: dash-dot-dash-dot,
+    4: dotted,
+    5: dash-dot-dot-dot.
+
+Character Font affects text only. Four fonts are available. The default font (1) is simple and is the fastest to draw. The font is defined by an integer code:
+
+    1: normal (simple) font (default),
+    2: roman font,
+    3: italic font,
+    4: script font.
+
+ Additional Symbols
+
+http://www.astro.caltech.edu/~tjp/pgplot/hershey.html
+
+Appendix B. PGPLOT Symbols
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-28" class="outline-2">
+<h2 id="sec-28"><span class="section-number-2">28</span> Black hole visualisation code</h2>
+<div class="outline-text-2" id="text-28">
+<pre class="example">
+Running code on Bluecrystal.
+&gt;
+&gt; ssh -X username@bc4gpulogin.acrc.bris.ac.uk
+&gt;
+&gt; Put the following line in your .cshrc file
+&gt;
+&gt; module load CUDA
+&gt; module load cURL
+&gt;
+&gt; Even though we’re not using CUDA loading the CUDA module provides the OpenCL libraries.
+&gt;
+&gt; We also need to install CFITSIO.
+&gt;
+&gt; Here’s the updated Makefile
+&gt;
+&gt; CC      = gcc
+&gt; LIBS    = -lOpenCL -lm -lcfitsio -lcurl
+&gt; LIBPATH = -L${HOME}/cfitsio/lib
+&gt; INCPATH = -I${HOME}/cfitsio/include
+&gt;
+&gt; all: code-img
+&gt;
+&gt; code-img: code-img.o code-img.cl
+&gt;        $(CC) code-img.o $(LIBS) $(LIBPATH) -o code-img
+&gt;
+&gt; code-img.o: code-img.c
+&gt;        $(CC) -c code-img.c $(INCPATH)
+&gt;
+&gt; Then update the parameters in the code-img.c file:
+&gt;
+&gt;    //Declare Main Parameters
+&gt;    double M = 1.0;
+&gt;    double a = 0.0; /* was 0.998 */
+&gt;    double iin = PI*80.0/180.0; /* was 63 degrees */
+&gt;    double phiin = 0.0;
+&gt;    double img_size = 20.0; /* was 400 */
+&gt;    int nsteps = 256; /* was 8192 */
+&gt;
+&gt; Then to build and run the code:
+&gt;
+&gt; make
+&gt; ./code-img
+&gt;
+&gt; Note that this should only be used for testing; we shouldn’t run “real” jobs on the log-in node.
+&gt;
+&gt; Copy the output file back to Calgary / wherever and visualise with ds9.
+&gt;
+&gt; ds9 "img-i53-a0p998-r400-8192.fits[3]"Now we have the code working we should really be running it on the GPU nodes not the login node.
+
+Create a “submit script” called, e.g., code-img.sh that contains the following
+
+#!/bin/bash -login
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:2
+#SBATCH --partition gpu
+#SBATCH --time=1:00:00
+#SBATCH --job-name=bh-img
+
+module load intel/2017.01
+module load CUDA
+module load cURL
+
+cd $SLURM_SUBMIT_DIR
+./code-img
+
+See https://www.acrc.bris.ac.uk/protected/bc4-docs/scheduler/index.html#gpu-jobs for more info.
+
+To submit the job type
+
+sbatch code-img.sh
+
+squeue &lt; shows what’s in the queue (you can grep for your username, e.g., squeue | grep phajy)
+
+The standard output is captured in a slum file, e.g., slurm-1203767.out. The output of any print statements in the code would appear there.
+
+If the files are getting really large it may be worth using HDF files instead of FITS files. See https://www.hdfgroup.org/ for some more info. Or ask George!
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-29" class="outline-2">
+<h2 id="sec-29"><span class="section-number-2">29</span> Good Astro related links</h2>
+<div class="outline-text-2" id="text-29">
+</div><div id="outline-container-sec-29-1" class="outline-3">
+<h3 id="sec-29-1"><span class="section-number-3">29.1</span> Astro General</h3>
+<div class="outline-text-3" id="text-29-1">
+<p>
+Astronomy and Data Science Toolkit <a href="https://datascience.astro4dev.org/toolkit.php">https://datascience.astro4dev.org/toolkit.php</a>#
+</p>
+
+<p>
+Astro Labs Solutions
+<a href="http://www.star.bris.ac.uk/dmw/astro-teach/practical_solutions/">http://www.star.bris.ac.uk/dmw/astro-teach/practical_solutions/</a>
+</p>
+
+<p>
+Bable (active code in Org-mode) <a href="http://orgmode.org/worg/org-contrib/babel/">http://orgmode.org/worg/org-contrib/babel/</a>
+</p>
+
+<p>
+Bristol Starlink Local Web <a href="http://www.star.bris.ac.uk/local/">http://www.star.bris.ac.uk/local/</a>
+</p>
+
+<p>
+Bristol STaR <a href="https://bdc-star.bris.ac.uk/me">https://bdc-star.bris.ac.uk/me</a>
+</p>
+
+<p>
+Cardiff Blackboard <a href="https://learningcentral.cf.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_19_1">https://learningcentral.cf.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_19_1</a>
+</p>
+
+<p>
+GX339-4 Analysis
+<a href="http://calgary.phy.bris.ac.uk/userwww/HBirch_RWellington_VZekoll/BinaryXRayReverb/GX339-4/GX339-4Analysis.html">http://calgary.phy.bris.ac.uk/userwww/HBirch_RWellington_VZekoll/BinaryXRayReverb/GX339-4/GX339-4Analysis.html</a>
+</p>
+
+<p>
+NASA Extragalactic Database <a href="https://ned.ipac.caltech.edu/forms/byname.html">https://ned.ipac.caltech.edu/forms/byname.html</a>
+</p>
+
+<p>
+Stellarium Guide <a href="http://sas-sky.org/wp-content/uploads/2013/02/Stellarium_Handbook.pdf">http://sas-sky.org/wp-content/uploads/2013/02/Stellarium_Handbook.pdf</a>
+B23
+</p>
+
+<p>
+Swansea Blackboard <a href="https://blackboard.swan.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_49_1">https://blackboard.swan.ac.uk/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_49_1</a>
+</p>
+
+<p>
+Swift BAT 70-Month Hard X-ray Survey <a href="https://swift.gsfc.nasa.gov/results/bs70mon/">https://swift.gsfc.nasa.gov/results/bs70mon/</a>
+</p>
+
+<p>
+XMM-Newton Reverberation
+<a href="http://www.star.bris.ac.uk/steff/xmmreverblags.html">http://www.star.bris.ac.uk/steff/xmmreverblags.html</a>
+</p>
+
+<p>
+XMM Group SharePoint <a href="https://uob.sharepoint.com/:o:/r/teams/grp-reverb-x/_layouts/15/WopiFrame.aspx?sourcedoc={EF98A042-5B2A-42CB-A985-380C89586F62}&file=grp-Reverb-X%20Notebook&action=default&RootFolder=/teams/grp-reverb-x/SiteAssets/grp-Reverb-X%20Notebook&web=1">https://uob.sharepoint.com/:o:/r/teams/grp-reverb-x/_layouts/15/WopiFrame.aspx?sourcedoc={EF98A042-5B2A-42CB-A985-380C89586F62}&file=grp-Reverb-X%20Notebook&action=default&RootFolder=/teams/grp-reverb-x/SiteAssets/grp-Reverb-X%20Notebook&web=1</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-2" class="outline-3">
+<h3 id="sec-29-2"><span class="section-number-3">29.2</span> BlueCrystal</h3>
+<div class="outline-text-3" id="text-29-2">
+<p>
+BC4 User Guide
+<a href="https://www.acrc.bris.ac.uk/protected/bc4-docs/index.html">https://www.acrc.bris.ac.uk/protected/bc4-docs/index.html</a>
+</p>
+
+<p>
+Resources page  <a href="https://www.acrc.bris.ac.uk/acrc/resources.htm">https://www.acrc.bris.ac.uk/acrc/resources.htm</a>
+</p>
+
+<p>
+User Guide  <a href="https://www.acrc.bris.ac.uk/pdf/bc-user-guide.pdf">https://www.acrc.bris.ac.uk/pdf/bc-user-guide.pdf</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-3" class="outline-3">
+<h3 id="sec-29-3"><span class="section-number-3">29.3</span> C programming</h3>
+<div class="outline-text-3" id="text-29-3">
+<p>
+My C programming learning directory <code>/homeb/steff075/Documents/C_programming</code>
+</p>
+
+<p>
+C Tutorials Point
+<a href="https://www.tutorialspoint.com/cprogramming/index.htm">https://www.tutorialspoint.com/cprogramming/index.htm</a>
+</p>
+
+<p>
+C Tutorial <a href="https://www.cprogramming.com/tutorial/c-tutorial.html">https://www.cprogramming.com/tutorial/c-tutorial.html</a>
+</p>
+
+<p>
+printf and scanf format codes
+<a href="http://www.teach.cs.toronto.edu/~ajr/209/notes/printf.html">http://www.teach.cs.toronto.edu/~ajr/209/notes/printf.html</a>
+</p>
+
+<p>
+<b>Integer Types</b>
+</p>
+
+<p>
+The following table provides the details of standard integer types with their storage sizes and value ranges −
+</p>
+<pre class="example">
+Type 	         Storage size 	      Value range
+
+char 	          1 byte 	     -128 to 127 or 0 to 255
+unsigned char 	  1 byte 	        0 to 255
+signed char       1 byte             -128 to 127
+int 	        2 or 4 bytes 	  -32,768 to 32,767 or -2,147,483,648 to 2,147,483,647
+unsigned int 	2 or 4 bytes    	0 to 65,535 or 0 to 4,294,967,295
+short 	          2 bytes 	  -32,768 to 32,767
+unsigned short 	  2 bytes         	0 to 65,535
+long     	  4 bytes    -2,147,483,648 to 2,147,483,647
+unsigned long 	  4 bytes          	0 to 4,294,967,295
+</pre>
+
+<p>
+<b>Floating-Point Types</b>
+</p>
+
+<p>
+The following table provide the details of standard floating-point types with storage sizes and value ranges and their precision −
+</p>
+<pre class="example">
+Type        Storage size 	Value range 	    Precision
+
+float 	        4 byte 	    1.2E-38 to 3.4E+38 	    6 decimal places
+double 	        8 byte 	   2.3E-308 to 1.7E+308    15 decimal places
+long double 	10 byte   3.4E-4932 to 1.1E+4932   19 decimal places
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-29-4" class="outline-3">
+<h3 id="sec-29-4"><span class="section-number-3">29.4</span> Data Visualisation</h3>
+<div class="outline-text-3" id="text-29-4">
+<p>
+Bobs Youtube pages (2018)
+<a href="https://www.youtube.com/playlist?list=PLZo40sVmw_4My97tv62aDITkOxOaJup7X">https://www.youtube.com/playlist?list=PLZo40sVmw_4My97tv62aDITkOxOaJup7X</a>
+</p>
+
+<p>
+VisTools <a href="https://keshif.me/demo/VisTools">https://keshif.me/demo/VisTools</a>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-29-5" class="outline-3">
+<h3 id="sec-29-5"><span class="section-number-3">29.5</span> EMACS</h3>
+<div class="outline-text-3" id="text-29-5">
+<p>
+Bens EMACS Tutorial <a href="http://www.star.bris.ac.uk/bjm/emacs.html">http://www.star.bris.ac.uk/bjm/emacs.html</a>
+</p>
+
+<p>
+Bens useful tips <a href="http://www.star.bris.ac.uk/bjm/emacs-tips.html">http://www.star.bris.ac.uk/bjm/emacs-tips.html</a>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-29-6" class="outline-3">
+<h3 id="sec-29-6"><span class="section-number-3">29.6</span> Github</h3>
+<div class="outline-text-3" id="text-29-6">
+<p>
+Carl Henrik Ek <a href="https://github.com/carlhenrikek?tab=repositories">https://github.com/carlhenrikek?tab=repositories</a>
+</p>
+
+<p>
+Stingray <a href="https://github.com/stingraysoftware/stingray/">https://github.com/stingraysoftware/stingray/</a>
+</p>
+
+<p>
+HPC <a href="https://github.com/UoB-HPC/intro-hpc-jacobi">https://github.com/UoB-HPC/intro-hpc-jacobi</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-7" class="outline-3">
+<h3 id="sec-29-7"><span class="section-number-3">29.7</span> Graph Plotter</h3>
+<div class="outline-text-3" id="text-29-7">
+<p>
+<a href="https://plot.ly/create/?fid=cufflinks:52#/">https://plot.ly/create/?fid=cufflinks:52#/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-8" class="outline-3">
+<h3 id="sec-29-8"><span class="section-number-3">29.8</span> Machine Learning</h3>
+<div class="outline-text-3" id="text-29-8">
+<p>
+Python Machine Learning <a href="https://www.pythonprogramming.net/machine-learning-tutorials/">https://www.pythonprogramming.net/machine-learning-tutorials/</a>
+</p>
+
+<p>
+Tensor Flow 501 <a href="https://software.intel.com/en-us/ai-academy/students/kits/tensor-flow-501">https://software.intel.com/en-us/ai-academy/students/kits/tensor-flow-501</a>
+</p>
+
+<p>
+ML 501 <a href="https://software.intel.com/en-us/ai-academy/students/kits/machine-learning-501">https://software.intel.com/en-us/ai-academy/students/kits/machine-learning-501</a>
+</p>
+
+<p>
+Nottingham ML Workshop <a href="https://www.nottingham.ac.uk/astronomy/workshop2018/talks.html">https://www.nottingham.ac.uk/astronomy/workshop2018/talks.html</a>
+</p>
+
+<p>
+Tensor Board <a href="https://www.tensorflow.org/guide/summaries_and_tensorboard">https://www.tensorflow.org/guide/summaries_and_tensorboard</a>
+</p>
+
+<p>
+NVIDIA (sign in with Bristol account) <a href="https://nvlabs.qwiklab.com/home">https://nvlabs.qwiklab.com/home</a>
+</p>
+
+<p>
+Intel Free AI courses for students
+<a href="https://software.intel.com/ai-academy/students/kits?cid=em-elq-29787&utm_source=elq&utm_medium=email&utm_campaign=29787&elq_cid=4563929">https://software.intel.com/ai-academy/students/kits?cid=em-elq-29787&utm_source=elq&utm_medium=email&utm_campaign=29787&elq_cid=4563929</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-9" class="outline-3">
+<h3 id="sec-29-9"><span class="section-number-3">29.9</span> Python</h3>
+<div class="outline-text-3" id="text-29-9">
+<p>
+How to Think Like a Computer Scientist: Learning with Python 3 <a href="http://openbookproject.net/thinkcs/python/english3e/">http://openbookproject.net/thinkcs/python/english3e/</a>
+</p>
+
+<p>
+Software Carpentry - Programming with Python
+<a href="http://swcarpentry.github.io/python-novice-inflammation/">http://swcarpentry.github.io/python-novice-inflammation/</a>
+</p>
+
+
+<p>
+Software Carpentry - Plotting in Python
+<a href="http://swcarpentry.github.io/python-novice-gapminder/">http://swcarpentry.github.io/python-novice-gapminder/</a>
+</p>
+
+<p>
+Bristol University ACRC Home <a href="https://www.acrc.bris.ac.uk/acrc/index.htm">https://www.acrc.bris.ac.uk/acrc/index.htm</a>
+</p>
+
+<p>
+Bristol ACRC Beginning Python <a href="http://chryswoods.com/beginning_python/">http://chryswoods.com/beginning_python/</a>
+</p>
+
+<p>
+Bristol ACRC Beginning Python
+<a href="http://chryswoods.com/intermediate_python/">http://chryswoods.com/intermediate_python/</a>
+</p>
+
+<p>
+Bristol ACRC Data Analysis in Python <a href="http://nbviewer.jupyter.org/github/milliams/data_analysis_python/blob/master/Introduction.ipynb">http://nbviewer.jupyter.org/github/milliams/data_analysis_python/blob/master/Introduction.ipynb</a>
+</p>
+
+<p>
+Bristol ACRC Parallel Python <a href="https://chryswoods.com/parallel_python/">https://chryswoods.com/parallel_python/</a>
+</p>
+
+<p>
+Github - Learn Python the hard way <a href="https://github.com/chris-void/pyway/blob/master/Learn%20Python%20The%20Hard%20Way,%203rd%20Edition%20.pdf">https://github.com/chris-void/pyway/blob/master/Learn%20Python%20The%20Hard%20Way,%203rd%20Edition%20.pdf</a>
+</p>
+
+<p>
+The Python Tutorial <a href="https://docs.python.org/3/tutorial/index.html">https://docs.python.org/3/tutorial/index.html</a>
+</p>
+
+<p>
+Carls Basic Python Crash course <a href="https://github.com/carlhenrikek/COMS30007/blob/master/Labs/Intro/COMS30007-python-tutorial.ipynb">https://github.com/carlhenrikek/COMS30007/blob/master/Labs/Intro/COMS30007-python-tutorial.ipynb</a>
+</p>
+
+<p>
+Pandas Toolkit <a href="http://pandas.pydata.org/pandas-docs/stable/">http://pandas.pydata.org/pandas-docs/stable/</a>
+</p>
+
+<p>
+Python Programming   <a href="https://www.pythonprogramming.net/">https://www.pythonprogramming.net/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-10" class="outline-3">
+<h3 id="sec-29-10"><span class="section-number-3">29.10</span> Pandas</h3>
+<div class="outline-text-3" id="text-29-10">
+<p>
+Multiple Scatter plots in pandas
+</p>
+
+<p>
+A good Pandas scaterplot example
+<a href="https://plot.ly/pandas/line-and-scatter/">https://plot.ly/pandas/line-and-scatter/</a>
+</p>
+
+<p>
+<a href="https://stackoverflow.com/questions/43061768/plotting-multiple-scatter-plots-pandas">https://stackoverflow.com/questions/43061768/plotting-multiple-scatter-plots-pandas</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-11" class="outline-3">
+<h3 id="sec-29-11"><span class="section-number-3">29.11</span> S-Language</h3>
+<div class="outline-text-3" id="text-29-11">
+<p>
+S-Lang Library <a href="https://www.jedsoft.org/slang/docs.html">https://www.jedsoft.org/slang/docs.html</a>
+</p>
+
+<p>
+Isis:tutorial:slang <a href="https://www.sternwarte.uni-erlangen.de/wiki/index.php/Isis:tutorial:slang">https://www.sternwarte.uni-erlangen.de/wiki/index.php/Isis:tutorial:slang</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-12" class="outline-3">
+<h3 id="sec-29-12"><span class="section-number-3">29.12</span> ISIS &amp; Spectral</h3>
+<div class="outline-text-3" id="text-29-12">
+<p>
+ISIS Home Page <a href="http://space.mit.edu/cxc/isis/index.html">http://space.mit.edu/cxc/isis/index.html</a>
+</p>
+
+<p>
+ISIS Tutorial <a href="http://space.mit.edu/ASC/isis2015/tutorials.html">http://space.mit.edu/ASC/isis2015/tutorials.html</a>
+</p>
+
+<p>
+A walk though ISIS tutorial <a href="http://www.sternwarte.uni-erlangen.de/wiki/doku.php?id=isis:tutorial:walkthrough">http://www.sternwarte.uni-erlangen.de/wiki/doku.php?id=isis:tutorial:walkthrough</a>
+</p>
+
+<p>
+Mike Nowak <a href="http://space.mit.edu/home/mnowak/isis_vs_xspec/parm.html">http://space.mit.edu/home/mnowak/isis_vs_xspec/parm.html</a>
+</p>
+
+<p>
+RELXILL <a href="http://www.sternwarte.uni-erlangen.de/~dauser/research/relxill/">http://www.sternwarte.uni-erlangen.de/~dauser/research/relxill/</a>
+</p>
+
+<p>
+Xspec Models <a href="https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/Models.html">https://heasarc.gsfc.nasa.gov/xanadu/xspec/manual/Models.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-13" class="outline-3">
+<h3 id="sec-29-13"><span class="section-number-3">29.13</span> SQL</h3>
+<div class="outline-text-3" id="text-29-13">
+<p>
+SQL Tutorial <a href="http://sqlzoo.net/">http://sqlzoo.net/</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-14" class="outline-3">
+<h3 id="sec-29-14"><span class="section-number-3">29.14</span> Unix</h3>
+<div class="outline-text-3" id="text-29-14">
+<p>
+Unix Tutorial <a href="http://www.star.bris.ac.uk/unixtut/index.html">http://www.star.bris.ac.uk/unixtut/index.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-15" class="outline-3">
+<h3 id="sec-29-15"><span class="section-number-3">29.15</span> Viva Prep</h3>
+<div class="outline-text-3" id="text-29-15">
+<p>
+Unpacking PhD
+<a href="https://ddubdrahcir.wordpress.com/2014/09/15/is-it-a-phd-or-not-a-phd-unpacking-the-viva/">https://ddubdrahcir.wordpress.com/2014/09/15/is-it-a-phd-or-not-a-phd-unpacking-the-viva/</a>
+</p>
+
+<p>
+Viva Top Tips
+<a href="https://www.theguardian.com/higher-education-network/2015/jan/08/how-to-survive-a-phd-viva-17-top-tips">https://www.theguardian.com/higher-education-network/2015/jan/08/how-to-survive-a-phd-viva-17-top-tips</a>
+</p>
+
+<p>
+Viva Guide
+<a href="http://www2.le.ac.uk/departments/gradschool/training/eresources/study-guides/viva">http://www2.le.ac.uk/departments/gradschool/training/eresources/study-guides/viva</a>
+</p>
+
+<p>
+Viva - thesis prep <a href="http://www2.le.ac.uk/departments/gradschool/training/eresources/study-guides/viva/prepare/thesis">http://www2.le.ac.uk/departments/gradschool/training/eresources/study-guides/viva/prepare/thesis</a>
+B56
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-29-16" class="outline-3">
+<h3 id="sec-29-16"><span class="section-number-3">29.16</span> XMM Newton</h3>
+<div class="outline-text-3" id="text-29-16">
+<p>
+Home <a href="https://www.cosmos.esa.int/web/xmm-new">https://www.cosmos.esa.int/web/xmm-new</a>
+o
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Stephen Hancock</p>
+<p class="date">Created: 2020-02-08 Sat 15:25</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
