@@ -1,0 +1,241 @@
+<!doctype html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+<meta name="Stephen Hancock" content="XMM-Newton">
+</head>
+
+</body>
+ <html>
+   <title>xmm-rev-ecm</title>
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.08">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ </head>
+  <style>
+    body {background-color:  #d5d7d8 ;}
+    body {font-family:"Arial";}
+  </style>
+<body>
+<div class="container">
+ <head>
+  <h2> </h2>
+ </head>
+<body>
+
+<div>
+<p style="margin-top: 5px; margin-right: 15px;">
+ <img src="http://www.star.bris.ac.uk/steff/ecm/University-of-Bristol-Logo-1.gif" style="float:left;width:180px;height:55px;">
+</div>
+
+<a>
+  <img src="http://www.star.bris.ac.uk/steff/ecm/steff_img.png" style="padding: 0 15px; float: right;" width="160" height="160">
+  <div style='width: 140px; text-align: center; float: right;'>Stephen Hancock PhD Research Student</div>
+</a>
+  </p>
+</figure>
+
+<br/>
+<br/>
+<br/>
+
+<br>
+ <head>
+  <h2>X-ray Reverberation in Active Galactic Nuclei</h2>
+ </head>
+
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+.button6 {background-color: #d1f2eb;} /* Light green */
+.button7 {background-color: #f7dc6f; color: black;} /* Yellow */
+.button8 {background-color: #95a5a6;} /* Dark Grey*/
+.button9 {background-color: #d4ac0d; color: black;} /* Gold */ 
+</style>
+<body>
+ <a href="http://www.star.bris.ac.uk/steff/xmmreverblags.html"><button class="button">Pre-processing</button>
+
+ <a href="http://www.star.bris.ac.uk/steff/timing_results.html"><button class="button button2">Timing Analysis</button>
+ <a href="http://www.star.bris.ac.uk/steff/spectral_results.html"><button class="button button2">Spectral Analysis</button>
+ <a href="http://www.star.bris.ac.uk/steff/ecm_results.html"><button class="button button2">ECM Analysis</button>
+ <a href="http://www.star.bris.ac.uk/steff/downloads.html"><button class="button button9">Downloads & Code</button>
+
+ <a href="http://www.star.bris.ac.uk/steff/timing_analysis.html"><button class="button button4">Timing Logbook</button>
+ <a href="http://www.star.bris.ac.uk/steff/agn_spectral_modelling.html"><button class="button button4">Spectral Logbook</button>
+ <a href="http://www.star.bris.ac.uk/steff/ecm_model.html"><button class="button button4">Building the ECM</button>
+
+ <a href="http://www.star.bris.ac.uk/steff/alternative_spectra.html"><button class="button button4">Alternative Spectra</button>
+ <a href="https://github.com/phajy/x-ray-reverberation"><button class="button button5">GitHub</button>
+ <a href="http://www.star.bris.ac.uk/steff/linux_notes.html"><button class="button button8">Linux Info</button>
+ <a href="http://www.star.bris.ac.uk/steff/links.html"><button class="button button8">Links</button></a>
+</body>
+
+<head>
+<body>
+<p style="color:#FF0000";>These web pages are currently under construction</p>
+</body>
+</style>
+</head>
+
+<figure>
+  <p style="margin-top: 5px;">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/bh2.jpg" style="padding: 0 10px; float: left;" width="370" height="230">
+  </p>
+<figure>
+
+<h4> Overview </h4>
+<p> We present a reproducible framework of the <a href="https://www.cosmos.esa.int/web/xmm-newton">XMM Newton</a> data analysis methods for a sample of over 20 Active Galactic Nuclei (AGN) showing highly variable X-ray reverberation lags. The links above provide an overview of the <b>Timing analysis</b> and <b>Spectral analysis</b> from XMM observations and probe deeper into the spectrum and time lag as a function of frequency and energy. They also contain links to the FITS files produced during this project which may be downloaded to reproduce the findings using the Interactive Spectral Interpretation System <a href="http://space.mit.edu/cxc/isis/">ISIS</a>, also suitabale for XSPEC users. We also provide the <b>Extended Corona Modelling (ECM)</b>, a recent model of the geometry of reverberating AGN. The <b>Downloads & Code</b> link contains data and scripts which will enable swift reproduction and manipulation of some of the analysis presented here. The <b>Key literature</b> section below provides links to several articles and guides that have driven this work. This research builds on findings reported in the <a href="http://www.star.bris.ac.uk/steff/ODonnell_2017_Xray_Reverberation_in_AGN_Thesis.pdf">MSc thesis</a> reported by O'Donnell (2017). </p>
+<br/>
+
+
+<h4>Research Summary</h4>
+<body>
+<p>X-ray emission from accreting black hole systems show strong variability and reflection between the soft (0.3-1.0 keV) and hard (1-4 keV) energy bands. This reflection originates near the innermost stable circular orbit (ISCO) around the black hole where narrow spectral features are blurred out by relativistic effects. The prominent Fe k line seen at 6.4 keV is broadened and can extend down to around 3 keV as the photons are shifted to lower energies. These reverberation lags reveal the light travel time between the X-ray source and the reflecting region, providing us with an opportunity to probe the geometry of the disc and coronal region.  This research explores the dynamic features of over 20 active galactic nuclei (AGN) via relativistic reflection spectral modelling using XMM-Newton archive data. We employ the results of reverberation and spectral analysis to parameterize a new model of the extended corona using ray tracing techniques. Currently in development, this complex and computationally intensive model has been tested to estimate the location of emitting regions by recreating the time lags observed in 'X-ray snapshots' of all AGN. We employ two X-ray sources to pinpoint the location of the primary emitting X-ray continuum and upward-propagating extended coronal regions, which may also be interpreted as a relativistic jet or out-flowing material beaming vertically away from the black hole central axis.
+Our results and methods will be used to build a spectral and temporal model of the extended corona which can be used by the wider scientific community.</p>
+ </body>
+
+
+<h4>Background</h4>
+ <body>
+ <p>The first relativistically broadened iron K line was discovered in ASCA observations of MCG6-30-15 (Tanaka et al, 1995). Afterwards, the first robust discovery of short time lags was discovered in 1H0707-495 (Fabian et al, 2009). Many new high frequency soft lags have since been discovered (e.g. Kara et al, 2013, DeMarco et al, 2013).The soft negative time lag is the signature of relativistic reflection that 'reverberates' and is equal to the light crossing time from the X-ray source to the reflecting region. The iron K line is thought to originate at the innermost part of the accretion disc and therefore studies of this phenomenon will offer great insight to the geometry of the system (Young & Reynolds, 2000).</p>
+ </body>
+
+
+<figure>
+  <p style="margin-top: 10px;">
+  <img src="http://www.star.bris.ac.uk/steff/images/Reflection_Model_Image.png" style="padding: 0 10px; float: centre;" width="370" height="250">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/Fe_Lag_V_BHmass.png" style="padding: 0 10px; float: centre;" width="370" height="250">
+  <img src="http://www.star.bris.ac.uk/steff/images/Relativistic_blurred_reflection.png" style="padding: 0 10px; float: centre;" width="370" height="250">
+  </p>
+</figure>
+
+ <p>In the diagram of the X-ray source above the accreting black hole (above left), the observer will see the continuum followed by the reflection component.  Note that the inner photons will be bent due to gravitational effects (based on Uttley et al, 2014). The time lags from this study are found to follow the balack hole mass scaling relationship discovered by DeMarco et al (2013), (centre) and a typical reflection  spectrum (above right) shows the relativistically  blurred  (solid line)  and  the continuum (dashed line).  Note the three main components of soft excess, broad iron line region and the Compton hump (Uttley et al, 2014).</p>
+
+<!--
+<table>
+    <tr>
+        <td class="col">
+     <a href="http://www.star.bris.ac.uk/steff/1H0707-495_data.html"><button type="button" {background-color:#989898;}">1H0707-495</button></a>
+     <a href="http://www.star.bris.ac.uk/steff/Ark564_data.html"><button type="button" {background-color:#989898;}">Ark564</button></a>
+     <a href="http://www.star.bris.ac.uk/steff/IRAS13224-3809_data.html"><button type="button" {background-color:#989898;}">IRAS13224-3809</button></a>
+     <a href="http://www.star.bris.ac.uk/steff/MCG-6-30-15_data.html"><button type="button" {background-color:#989898;}">MCG-6-30-15</button></a>
+</td>
+<td class="col">
+        <ul>
+     <li><a href="http://www.star.bris.ac.uk/steff/Mrk335_data.html"><button type="button" {background-color:#989898;}">Mrk335</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/Mrk766_data.html"><button type="button" {background-color:#989898;}">Mrk766</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/Mrk841_data.html"><button type="button" {background-color:#989898;}">Mrk841</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/NGC3516_data.html"><button type="button" {background-color:#989898;}">NGC3516</button></a></li>
+  </ul>
+</td>
+<td class="col">
+   <ul>
+     <li><a href="http://www.star.bris.ac.uk/steff/NGC4051_data.html"><button type="button" {background-color:#989898;}">NGC4051</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/NGC4151_data.html"><button type="button" {background-color:#989898;}">NGC4151</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/NGC4395_data.html"><button type="button" {background-color:#989898;}">NGC4395</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/NGC5548_data.html"><button type="button" {background-color:#989898;}">NGC5548</button></a></li>
+</ul>
+</td>
+<td class="col">
+   <ul>
+     <li><a href="http://www.star.bris.ac.uk/steff/NGC6860_data.html"><button type="button" {background-color:#989898;}">NGC6860</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/NGC7314_data.html"><button type="button" {background-color:#989898;}">NGC7314</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/NGC7469_data.html"><button type="button" {background-color:#989898;}">NGC7469</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/PG1211+143_data.html"><button type="button" {background-color:#989898;}">PG1211+143</button></a></li>
+</ul>
+</td>
+<td class="col">
+        <ul>
+     <li><a href="http://www.star.bris.ac.uk/steff/PG1244+026_data.html"><button type="button" {background-color:#989898;}">PG1244+026</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/PG1247+267_data.html"><button type="button" {background-color:#989898;}">PG1247+267</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/REJ1034+396_data.html"><button type="button" {background-color:#989898;}">REJ1034+396</button></a></li>
+     <li><a href="http://www.star.bris.ac.uk/steff/GX339-4_data.html"><button type="button" {background-color:#989898;}">GX339-4</button></a></li>
+</ul>
+</td>
+</tr>
+</table>
+-->
+
+<h4>Brief overview of data analysis</h4>
+ <body>
+   <p>All observations were downloaded from the <a href="http://www.cosmos.esa.int/web/xmm-newton/xsa">XMM-Newton archives</a> and analysed using the HEASOFT SAS software version 6.19. The data presented were downloaded with preference to observations > ~40ks. Processing was conducted using standard methods outlined in the <a href="http://xmm-tools.cosmos.esa.int/external/xmm_user_support/documentation/sas_usg/USG/">XMM SAS Users Guide</a> and associated threads. Lightcurves were generated in the 0.3-10keV energy range using the conditions FLAG==0 and PATTERN &le; 4. The observations were cleaned for background flares where required. Note that photon pileup was an issue for some AGN and correction methods are outlined in the full Logbook links. Source and background regions selected using a 35 arcsec radius for a consistent approach throughout. Spectral analysis was conducted using the Interactive Spectral Interpretation System <a href="http://space.mit.edu/cxc/isis/">ISIS</a> Version 1.6.2-27 and beyond. </p>
+ </body>
+
+
+<h4>Extended Corona Modelling</h4>
+ <p>The modelling for the extended corona is avaiable in the <a href="https://github.com/phajy/x-ray-reverberation">X-ray Reverberation</a> repository in Github</p>
+
+
+<h4>Overview of the X-ray reverberation scenario</h4>
+ <p>This short loop cartoon presents the main aspects of the X-ray reverberation (currently in development)</p>
+
+<figure>
+  <p style="margin-top: 10px;">
+  <img src="http://www.star.bris.ac.uk/steff/ecm/x-ray-reverb.gif" style="padding: 0 15px; float: centre;" width="900" height="550">
+  </p>
+<figure>
+
+<h4>Key literature</h4>
+
+<ol>
+
+<li>O'Donnell (2017), X-ray Reverberation in Active Galactic Nuclei. <a  href="http://www.star.bris.ac.uk/steff/ODonnell_2017_Xray_Reverberation_in_AGN_Thesis.pdf">MSc Thesis</a></li>
+
+<li>DeMarco et al (2013), Discovery of a relationship between black hole mass and soft
+    X-ray time lags in active galactic
+    nuclei. <a href="http://adsabs.harvard.edu/abs/2013MNRAS.431.2441D"> MNRAS 431, 2441-2452</a></li>
+
+<li>DeMarco et al (2015), Tracing the Reverberation Lag in the Hard State of Black Hole X-Ray Binaries. <a href="http://adsabs.harvard.edu/abs/2015ApJ...814...50D"> ApJ 814:50,1-14</a></li>
+
+ <li>Epitropakis et al (2016), Theoretical modelling of the AGN iron-line / continuum time-lags in the lamp-post geometry. <a href="http://adsabs.harvard.edu/abs/2016arXiv160702625E"> A&A Accepted, 2016</a></li>
+
+<li>Fabian et al (2009), Broad line emission from iron K- and L-shell transitions in the active galaxy 1H 0707-495. <a href="http://adsabs.harvard.edu/abs/2009Natur.459..540F"> Nat 459, 540</a></li>
+
+<li>Kara et al (2013), Discovery of high frequency iron K lags in Ark564 and Mrk335. <a href="http://adsabs.harvard.edu/abs/2013MNRAS.434.1129K"> MNRAS 434, 1129-1137</a></li>
+
+<li>Nowak (2013), <a href="http://space.mit.edu/home/mnowak/isis_vs_xspec/index.html">
+  Loving ISIS - Confessions of a Former XSPEC User</a></li>
+
+<li>Tanaka et al (1995), Gravitationally redshifted emission implying
+  an accretion disk and massive black hole in the active galaxy
+  MCG-6-30-15. <a href="http://adsabs.harvard.edu/abs/1995Natur.375..659T">
+  Nat 375, 659-661</a></li>
+
+<li>Uttley et al (2014), X-ray reverberation around accreting black
+  holes. <a href="http://adsabs.harvard.edu/abs/2014A%26ARv..22...72U">
+  AA Rev 22:27</a></li>
+
+<li>Young and Reynolds (2000), Iron line reverberation mapping with
+  Constellation-X. <a href="http://adsabs.harvard.edu/abs/2000ApJ...529..101Y"
+  >ApJ 529, 101-108</a></li>
+
+<li>Hancock. S (2020), X-ray reverberation in AGN - The extended corona scenario<a href="http://www.star.bris.ac.uk/steff/ecm/Reverb-Stephen-Hancock-14Sep2020.ppt"> PPT-current</a></li>
+
+</ol>
+<body>
+<hr>
+<div class="footnote">
+<p>Created by: Stephen Hancock, University of Bristol, HH Wills Physics Lab.</p>
+<p>email: steff.hancock@bristol.ac.uk</p>
+</div>
+</hr>
+<br>
+</html>
